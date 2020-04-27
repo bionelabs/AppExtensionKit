@@ -10,21 +10,21 @@ import UIKit
 
 
 // Range
-extension String {
+public extension String {
     
-    subscript(_ r: CountableClosedRange<Int>) -> String {
+    public subscript(_ r: CountableClosedRange<Int>) -> String {
         let lower = self.index(self.startIndex, offsetBy: r.lowerBound)
         let upper = self.index(self.startIndex, offsetBy: r.upperBound + 1)
         return String(self[lower..<upper])
     }
     
-    subscript(_ r: CountableRange<Int>) -> String {
+    public subscript(_ r: CountableRange<Int>) -> String {
         let lower = self.index(self.startIndex, offsetBy: r.lowerBound)
         let upper = self.index(self.startIndex, offsetBy: r.upperBound)
         return String(self[lower..<upper])
     }
     
-    subscript(_ r: Int) -> String {
+    public subscript(_ r: Int) -> String {
         let index = self.index(self.startIndex, offsetBy: r)
         return String(self[index])
     }
@@ -33,9 +33,9 @@ extension String {
 
 
 // components
-extension String {
+public extension String {
     
-    func components(separatedBy: Int) -> [String] {
+    public func components(separatedBy: Int) -> [String] {
         var strings: [String] = []
         if self.count <= separatedBy {
             return [self]

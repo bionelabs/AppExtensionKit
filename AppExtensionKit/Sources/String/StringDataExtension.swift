@@ -6,7 +6,9 @@
 //  Copyright © 2020 Cao Phuoc Thanh. All rights reserved.
 //
 
-func bitString(hex : UInt8) -> String {
+import UIKit
+
+public func bitString(hex : UInt8) -> String {
     let string = String(hex, radix: 2)
     var padded = string
     for _ in 0..<(8 - string.count) {
@@ -15,7 +17,7 @@ func bitString(hex : UInt8) -> String {
     return padded
 }
 
-func bit(hex : UInt8) -> [UInt] {
+public func bit(hex : UInt8) -> [UInt] {
     let string = String(hex, radix: 2)
     var padded = string
     for _ in 0..<(8 - string.count) {
@@ -24,7 +26,7 @@ func bit(hex : UInt8) -> [UInt] {
     return Array(padded).map { UInt(String($0))!}
 }
 
-extension Data {
+public extension Data {
     
     /// Hexadecimal string representation of `Data` object.
     
@@ -34,7 +36,7 @@ extension Data {
     }
 }
 
-extension Data {
+public extension Data {
     
     init<T>(from value: T) {
         self = Swift.withUnsafeBytes(of: value) { Data($0) }
@@ -45,7 +47,7 @@ extension Data {
     }
 }
 
-extension String {
+public extension String {
     var hexaToInt      : Int    { return Int(strtoul(self, nil, 16))      }
     var hexaToDouble   : Double { return Double(strtoul(self, nil, 16))   }
     var hexaToBinary   : String { return String(hexaToInt, radix: 2)      }
@@ -56,27 +58,27 @@ extension String {
     var binaryToHexa   : String { return String(binaryToInt, radix: 16)  }
 }
 
-extension Int {
+public extension Int {
     var binaryString: String { return String(self, radix: 2)  }
     var hexaString  : String { return String(self, radix: 16) }
     var doubleValue : Double { return Double(self) }
 }
 
-extension Int {
+public extension Int {
     var data: Data {
         var int = self
         return Data(bytes: &int, count: MemoryLayout<Int>.size)
     }
 }
 
-extension UInt {
+public extension UInt {
     var data: Data {
         var int = self
         return Data(bytes: &int, count: MemoryLayout<UInt>.size)
     }
 }
 
-extension UInt8 {
+public extension UInt8 {
     var data: Data {
         var int = self
         return Data(bytes: &int, count: MemoryLayout<UInt8>.size)
@@ -87,14 +89,14 @@ extension UInt8 {
     }
 }
 
-extension UInt16 {
+public extension UInt16 {
     var data: Data {
         var int = self
         return Data(bytes: &int, count: MemoryLayout<UInt16>.size)
     }
 }
 
-extension UInt32 {
+public extension UInt32 {
     var data: Data {
         var int = self
         return Data(bytes: &int, count: MemoryLayout<UInt32>.size)
@@ -110,7 +112,7 @@ extension UInt32 {
     }
 }
 
-extension Data {
+public extension Data {
     
     var uint8: UInt8 {
         get {
@@ -139,7 +141,7 @@ extension Data {
     }
 }
 
-extension String {
+public extension String {
     
     var hexadecimal: Data? {
         var data = Data(capacity: self.count / 2)

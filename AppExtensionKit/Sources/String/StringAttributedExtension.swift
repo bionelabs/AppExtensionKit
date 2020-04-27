@@ -29,23 +29,23 @@ public func + (left: NSAttributedString, right: String) -> NSAttributedString {
     return result
 }
 
-extension String {
+public extension String {
     
-    var attributedString: NSAttributedString {
+    public var attributedString: NSAttributedString {
         return NSAttributedString(string: self)
     }
     
-    func color(_ color: UIColor) -> NSAttributedString {
+    public func color(_ color: UIColor) -> NSAttributedString {
         let attributes = [NSAttributedString.Key.foregroundColor: color]
         return NSAttributedString(string: self, attributes: attributes)
     }
     
-    func font(_ font: UIFont) -> NSAttributedString {
+    public func font(_ font: UIFont) -> NSAttributedString {
         let attributes = [NSAttributedString.Key.font: font]
         return NSAttributedString(string: self, attributes: attributes)
     }
     
-    func attibutes(_ elements: [AttibuteType]) -> NSAttributedString {
+    public func attibutes(_ elements: [AttibuteType]) -> NSAttributedString {
         var _attributes: [NSAttributedString.Key: Any] = [:]
         elements.forEach {
             switch $0 {
@@ -63,16 +63,16 @@ extension String {
     }
 }
 
-enum AttibuteType {
+public enum AttibuteType {
     case color(UIColor)
     case font(UIFont)
     case underline
     case link(URL)
 }
 
-extension NSAttributedString {
+public extension NSAttributedString {
     
-    static func with(_ elements: NSAttributedString...) -> NSAttributedString {
+    public static func with(_ elements: NSAttributedString...) -> NSAttributedString {
         let attributedString = NSMutableAttributedString()
         guard elements.count > 0 else {
             return attributedString
@@ -90,7 +90,7 @@ extension NSAttributedString {
         return attributedString
     }
     
-    func withAttibutes(_ elements: [AttibuteType]) -> NSAttributedString {
+    public func withAttibutes(_ elements: [AttibuteType]) -> NSAttributedString {
         var _attributes: [NSAttributedString.Key: Any] = [:]
         elements.forEach {
             switch $0 {

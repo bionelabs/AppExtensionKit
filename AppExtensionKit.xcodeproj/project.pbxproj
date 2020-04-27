@@ -12,7 +12,6 @@
 		0556277024573072003B5080 /* AppExtensionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0556276224573071003B5080 /* AppExtensionKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0556277B24573098003B5080 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0556277A24573098003B5080 /* BundleExtension.swift */; };
 		0556277D245730BA003B5080 /* StringSizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0556277C245730BA003B5080 /* StringSizeExtension.swift */; };
-		0556277F245730DB003B5080 /* StringMD5Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0556277E245730DB003B5080 /* StringMD5Extention.swift */; };
 		055627822457312E003B5080 /* StringAttributedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055627812457312E003B5080 /* StringAttributedExtension.swift */; };
 		055627842457318F003B5080 /* StringComponentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055627832457318F003B5080 /* StringComponentsExtension.swift */; };
 		05562786245731DC003B5080 /* StringDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05562785245731DC003B5080 /* StringDataExtension.swift */; };
@@ -41,7 +40,6 @@
 		0556276F24573072003B5080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0556277A24573098003B5080 /* BundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		0556277C245730BA003B5080 /* StringSizeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringSizeExtension.swift; sourceTree = "<group>"; };
-		0556277E245730DB003B5080 /* StringMD5Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMD5Extention.swift; sourceTree = "<group>"; };
 		055627812457312E003B5080 /* StringAttributedExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributedExtension.swift; sourceTree = "<group>"; };
 		055627832457318F003B5080 /* StringComponentsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringComponentsExtension.swift; sourceTree = "<group>"; };
 		05562785245731DC003B5080 /* StringDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDataExtension.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				055627812457312E003B5080 /* StringAttributedExtension.swift */,
-				0556277E245730DB003B5080 /* StringMD5Extention.swift */,
 				0556277C245730BA003B5080 /* StringSizeExtension.swift */,
 				055627832457318F003B5080 /* StringComponentsExtension.swift */,
 				05562785245731DC003B5080 /* StringDataExtension.swift */,
@@ -242,7 +239,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0556277F245730DB003B5080 /* StringMD5Extention.swift in Sources */,
 				05562788245733EC003B5080 /* MimeType.swift in Sources */,
 				0556277B24573098003B5080 /* BundleExtension.swift in Sources */,
 				05562786245731DC003B5080 /* StringDataExtension.swift in Sources */,

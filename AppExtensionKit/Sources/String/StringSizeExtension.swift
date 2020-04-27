@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension String {
+public extension String {
     
-    func size(ofFont font: UIFont) -> CGSize {
+    public func size(ofFont font: UIFont) -> CGSize {
         return (self as NSString).size(withAttributes: [NSAttributedString.Key.font: font])
     }
 }
