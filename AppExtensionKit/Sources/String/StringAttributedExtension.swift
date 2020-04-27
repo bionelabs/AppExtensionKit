@@ -31,21 +31,21 @@ public func + (left: NSAttributedString, right: String) -> NSAttributedString {
 
 public extension String {
     
-    public var attributedString: NSAttributedString {
+    var attributedString: NSAttributedString {
         return NSAttributedString(string: self)
     }
     
-    public func color(_ color: UIColor) -> NSAttributedString {
+    func color(_ color: UIColor) -> NSAttributedString {
         let attributes = [NSAttributedString.Key.foregroundColor: color]
         return NSAttributedString(string: self, attributes: attributes)
     }
     
-    public func font(_ font: UIFont) -> NSAttributedString {
+    func font(_ font: UIFont) -> NSAttributedString {
         let attributes = [NSAttributedString.Key.font: font]
         return NSAttributedString(string: self, attributes: attributes)
     }
     
-    public func attibutes(_ elements: [AttibuteType]) -> NSAttributedString {
+    func attibutes(_ elements: [AttibuteType]) -> NSAttributedString {
         var _attributes: [NSAttributedString.Key: Any] = [:]
         elements.forEach {
             switch $0 {
@@ -72,7 +72,7 @@ public enum AttibuteType {
 
 public extension NSAttributedString {
     
-    public static func with(_ elements: NSAttributedString...) -> NSAttributedString {
+    static func with(_ elements: NSAttributedString...) -> NSAttributedString {
         let attributedString = NSMutableAttributedString()
         guard elements.count > 0 else {
             return attributedString
@@ -90,7 +90,7 @@ public extension NSAttributedString {
         return attributedString
     }
     
-    public func withAttibutes(_ elements: [AttibuteType]) -> NSAttributedString {
+    func withAttibutes(_ elements: [AttibuteType]) -> NSAttributedString {
         var _attributes: [NSAttributedString.Key: Any] = [:]
         elements.forEach {
             switch $0 {

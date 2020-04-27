@@ -10,7 +10,7 @@ import UIKit
 
 public extension String {
     
-    public func size(ofFont font: UIFont) -> CGSize {
+    func size(ofFont font: UIFont) -> CGSize {
         return (self as NSString).size(withAttributes: [NSAttributedString.Key.font: font])
     }
 }

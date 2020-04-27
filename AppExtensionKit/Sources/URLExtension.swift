@@ -16,7 +16,7 @@ public extension URL {
     }
 }
 
-extension URL {
+public extension URL {
     var fileName: String? {
         let components = self.absoluteString.components(separatedBy: "/")
         if let last = components.last, last != "" {
@@ -29,7 +29,7 @@ extension URL {
     }
 }
 
-extension URL {
+public extension URL {
     var isDirectory: Bool {
         var isDir: ObjCBool = ObjCBool(false)
         if FileManager.default.fileExists(atPath: self.path, isDirectory: &isDir) {
@@ -40,7 +40,7 @@ extension URL {
     }
 }
 
-extension URL {
+public extension URL {
     
     func readBuffer(offset: Int, lenght: Int, calback: (UnsafeMutablePointer<UInt8>, Int) -> Void) -> Int {
         guard let inputStream: InputStream = InputStream(url: self) else { return 0 }

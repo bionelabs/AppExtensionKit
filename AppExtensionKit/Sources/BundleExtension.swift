@@ -6,7 +6,7 @@
 //  Copyright © 2018 Cao Phuoc Thanh. All rights reserved.
 //
 
-extension Bundle {
+public extension Bundle {
     
     var appName: String {
         return infoDictionary?["CFBundleName"] as! String

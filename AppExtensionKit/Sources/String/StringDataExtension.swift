@@ -43,7 +43,7 @@ public extension Data {
     }
     
     func to<T>(type: T.Type) -> T {
-        return self.withUnsafeBytes { $0.pointee }
+        return self.withUnsafeBytes { $0.load(as: type) }
     }
 }
 
@@ -114,31 +114,13 @@ public extension UInt32 {
 
 public extension Data {
     
-    var uint8: UInt8 {
-        get {
-            var number: UInt8 = 0
-            self.copyBytes(to:&number, count: MemoryLayout<UInt8>.size)
-            return number
-        }
-    }
+    var uint8: UInt8 { return self.withUnsafeBytes { $0.load(as: UInt8.self) } }
     
-    var uint16: UInt16 {
-        get {
-            let i16array = self.withUnsafeBytes {
-                UnsafeBufferPointer<UInt16>(start: $0, count: self.count/2).map(UInt16.init(littleEndian:))
-            }
-            return i16array[0]
-        }
-    }
+    var uInt16: UInt16 { return self.withUnsafeBytes { $0.load(as: UInt16.self) } }
     
-    var uint32: UInt32 {
-        get {
-            let i32array = self.withUnsafeBytes {
-                UnsafeBufferPointer<UInt32>(start: $0, count: self.count/2).map(UInt32.init(littleEndian:))
-            }
-            return i32array[0]
-        }
-    }
+    var uInt32: UInt32 { return  self.withUnsafeBytes { $0.load(as: UInt32.self) } }
+    
+    var uInt64: UInt64 { return  self.withUnsafeBytes { $0.load(as: UInt64.self) } }
 }
 
 public extension String {
